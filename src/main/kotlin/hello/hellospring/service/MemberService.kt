@@ -2,9 +2,12 @@ package hello.hellospring.service
 
 import hello.hellospring.domain.Member
 import hello.hellospring.repository.MemoryMemberRepository
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Service
 import java.lang.IllegalStateException
 
-class MemberService(private val memberRepository: MemoryMemberRepository) {
+@Service
+class MemberService @Autowired constructor(private val memberRepository: MemoryMemberRepository) {
 
   /**
    * 회원 가입
