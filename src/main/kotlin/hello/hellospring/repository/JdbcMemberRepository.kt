@@ -2,10 +2,11 @@ package hello.hellospring.repository
 
 import hello.hellospring.domain.Member
 import org.springframework.jdbc.datasource.DataSourceUtils
+import org.springframework.stereotype.Repository
 import java.sql.*
 import javax.sql.DataSource
 
-
+//@Repository
 class JdbcMemberRepository(private val dataSource: DataSource): MemberRepository {
 
   override fun save(member: Member): Member {

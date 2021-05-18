@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository
 import java.sql.ResultSet
 import javax.sql.DataSource
 
-@Repository
+//@Repository
 // 생성자가 하나면 @AutoWired 생략 가능
 class JdbcTemplateMemberRepository @Autowired constructor(dataSource: DataSource) : MemberRepository {
   private val jdbcTemplate: JdbcTemplate = JdbcTemplate(dataSource)

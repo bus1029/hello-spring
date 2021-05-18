@@ -4,7 +4,7 @@ import hello.hellospring.domain.Member
 import org.springframework.stereotype.Repository
 import javax.persistence.EntityManager
 
-@Repository
+//@Repository
 class JpaMemberRepository(private val em: EntityManager): MemberRepository {
 
   override fun save(member: Member): Member {

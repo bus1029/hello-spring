@@ -9,15 +9,10 @@ import javax.persistence.EntityManager
 import javax.sql.DataSource
 
 @Configuration
-class SpringConfig @Autowired constructor(private val em: EntityManager) {
+class SpringConfig @Autowired constructor(private val memberRepository: MemberRepository) {
 
   @Bean
   fun memberService(): MemberService {
-    return MemberService(memberRepository())
-  }
-
-  @Bean
-  fun memberRepository(): MemberRepository {
-    return JpaMemberRepository(em)
+    return MemberService(memberRepository)
   }
 }
