@@ -1,6 +1,7 @@
 package hello.hellospring
 
 import hello.hellospring.repository.JdbcMemberRepository
+import hello.hellospring.repository.JdbcTemplateMemberRepository
 import hello.hellospring.repository.MemberRepository
 import hello.hellospring.repository.MemoryMemberRepository
 import hello.hellospring.service.MemberService
@@ -19,6 +20,6 @@ class SpringConfig @Autowired constructor(private val dataSource: DataSource) {
 
   @Bean
   fun memberRepository(): MemberRepository {
-    return JdbcMemberRepository(dataSource)
+    return JdbcTemplateMemberRepository(dataSource)
   }
 }
