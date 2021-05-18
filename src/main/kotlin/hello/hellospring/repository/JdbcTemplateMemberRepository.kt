@@ -29,12 +29,12 @@ class JdbcTemplateMemberRepository @Autowired constructor(dataSource: DataSource
 
   override fun findById(id: Long): Member? {
     val result = jdbcTemplate.query("select * from member where id = ?", memberRowMapper(), id)
-    return result.find { it.id == id }
+    return result.firstOrNull()
   }
 
   override fun findByName(name: String): Member? {
     val result = jdbcTemplate.query("select * from member where name = ?", memberRowMapper(), name)
-    return result.find { it.name == name }
+    return result.firstOrNull()
   }
 
   override fun findAll(): List<Member> {
