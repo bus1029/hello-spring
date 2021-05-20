@@ -20,7 +20,7 @@ class MemoryMemberRepository : MemberRepository {
 
   override fun findByName(name: String): Member? {
     // Get first element that satisfies predicate in find
-    return store.values.find { member -> member.name == name }
+    return store.values.firstOrNull()
   }
 
   override fun findAll(): List<Member> {
