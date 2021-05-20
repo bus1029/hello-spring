@@ -20,13 +20,11 @@ class JpaMemberRepository(private val em: EntityManager): MemberRepository {
     return em.createQuery("select m from Member m where m.name = :name", Member::class.java)
       .setParameter("name", name)
       .resultList
-      .filterIsInstance(Member::class.java)
       .firstOrNull()
   }
 
   override fun findAll(): List<Member> {
     return em.createQuery("select m from Member m", Member::class.java)
       .resultList
-      .filterIsInstance(Member::class.java)
   }
 }
